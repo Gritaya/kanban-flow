@@ -356,7 +356,7 @@ function seedDemo(db: DB) {
     const colId = cols[ci].id;
     db.tasks.push({
       id: `t_${db.tasks.length}`, boardId: board.id, columnId: colId, title, description: "",
-      assigneeId, priority, dueDate: null,
+      assigneeId, priority: priority ?? null, dueDate: null,
       position: db.tasks.filter((t) => t.columnId === colId).length,
       createdAt: now, updatedAt: now,
     });
