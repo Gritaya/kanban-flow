@@ -17,7 +17,7 @@ export function AppHeader({ user }: { user: User }) {
           size="sm"
           onClick={async () => {
             await getService().logout();
-            qc.clear();
+            await qc.resetQueries();
           }}
         >
           Log out

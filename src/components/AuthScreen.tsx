@@ -22,7 +22,7 @@ export function AuthScreen() {
       const api = getService();
       if (mode === "login") await api.login({ email, password });
       else await api.register({ name, email, password });
-      qc.clear();
+      await qc.resetQueries();
     } catch (err) {
       setError((err as Error).message);
     } finally {
